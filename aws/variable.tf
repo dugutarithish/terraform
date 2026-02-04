@@ -1,14 +1,14 @@
 variable "ami_value" {
-  description = "THR AMI ID"
-  type        = "string"
+  description = "THE AMI ID"
+  type        = string  
 }
 
 variable "instance_type_value" {
   description = "THE INSTANCE TYPE"
-  type        = string
+  type        = string  
 }
 
 variable "subnet_id_value" {
-   description = "THE SUBNET ID"
-   type        = "string"
+  description = "THE SUBNET ID"
+  type        = string  
 }
