@@ -1,5 +1,5 @@
 provider "aws" {
-  region = "ap-south-1" # This is the Mumbai region
+  region = "ap-south-1a" # This is the Mumbai region
 }
 
 resource "aws_instance" "example" {
