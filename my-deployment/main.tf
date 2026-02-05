@@ -6,3 +6,19 @@ module "ec2_cluster" {
   instance_type_value = "t3.micro"
   subnet_id_value     = "subnet-0c8129f74505c641e" # Replace with your actual Subnet ID
 }
+
+
+resource "aws_s3_bucket" "s3_bucket" {
+  bucket = "rithish-terraofrm" # change this
+}
+
+resource "aws_dynamodb_table" "terraform_lock" {
+  name           = "terraform-lock"
+  billing_mode   = "PAY_PER_REQUEST"
+  hash_key       = "LockID"
+
+  attribute {
+    name = "LockID"
+    type = "S"
+  }
+}
