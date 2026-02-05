@@ -3,7 +3,7 @@ variable "ami_value" {
   type         = string
 }
 
-variable "instance_type" {
+variable "instance_type_value" {
   description   = "THE EC2 NUMBER OR VALUE & t2.miceo"
   type           = string
 }
