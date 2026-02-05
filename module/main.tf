@@ -1,11 +1,10 @@
 provider "aws" {
- region = "ap-south-1"
- }
+  region = "ap-south-1"
+}
 
-
- resource "aws_instance" "example" {
-   ami             = var.ami-value 
-   instance_type   = var.instance_type_value
-   subnet_id       = var.subnet_id_value
- 
- }
+module "ec2_instance" {
+  source              = "./module/ec2_instance"
+  ami_value           = "ami-019715e0d74f695be"
+  instance_type_value = "t2.micro" # Fixed typo 'insatnce'
+  subnet_id_value     = "subnet-0c8a2fc93c681eab6"
+}
