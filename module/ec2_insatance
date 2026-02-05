@@ -1,15 +1,9 @@
-provider "aws" {
- region = "ap-south-1"
- }
+resource "aws_instance" "example" {
+  ami           = var.ami_value # Use underscore, matches your variable
+  instance_type = var.instance_type_value
+  subnet_id     = var.subnet_id_value
 
-module "ec2_instance" {
-source = "./module/ec2_instance"
-ami_value                  = "ami-019715e0d74f695be"
-insatnce_type_value        =  "t3.micro"
-subnet_id_value            =  "subnet-0c8a2fc93c681eab6"
-
-tag = {
-  name = "terraform_done"
-  
-    }
-  }   
+  tags = {
+    Name = "terraform_done"
+  }
+}
