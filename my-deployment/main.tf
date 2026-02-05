@@ -8,3 +8,17 @@ module "ec2_cluster" {
 }
 
 
+resource "aws_s3_bucket" "s3_bucket" {
+  bucket = "my-tf-test-bucket-unique-suffix" # change this
+}
+
+resource "aws_dynamodb_table" "terraform_lock" {
+  name           = "terraform-lock"
+  billing_mode   = "PAY_PER_REQUEST"
+  hash_key       = "LockID"
+
+  attribute {
+    name = "LockID"
+    type = "S"
+  }
+}
