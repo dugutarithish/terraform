@@ -4,9 +4,9 @@ provider "aws" {
 
 module "ec2_instance" {
 source = "./module/ec2_instance"
-ami_value =                   " "
-insatnce_type_value =         ""
-subnet_id_value =             ""
+ami_value                  = "ami-019715e0d74f695be"
+insatnce_type_value        =  "t3.micro"
+subnet_id_value            =  "subnet-0c8a2fc93c681eab6"
 
 tag = {
   name = "terraform_done"
