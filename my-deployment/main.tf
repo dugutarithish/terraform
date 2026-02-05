@@ -9,7 +9,7 @@ module "ec2_cluster" {
 
 
 resource "aws_s3_bucket" "s3_bucket" {
-  bucket = "my-tf-test-bucket-unique-suffix" # change this
+  bucket = "rithissh-s3" # change this
 }
 
 resource "aws_dynamodb_table" "terraform_lock" {
