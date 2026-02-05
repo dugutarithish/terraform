@@ -7,18 +7,23 @@ module "ec2_cluster" {
   subnet_id_value     = "subnet-0c8129f74505c641e" # Replace with your actual Subnet ID
 }
 
-
-resource "aws_s3_bucket" "s3_bucket" {
-  bucket = "rithissh-s3" # change this
+provider "aws" {
+  region = "ap-south-1"
 }
 
-resource "aws_dynamodb_table" "terraform_lock" {
-  name           = "terraform-lock"
-  billing_mode   = "PAY_PER_REQUEST"
-  hash_key       = "LockID"
+resource "aws_dynamodb_table" "users" {
+  name         = "rithish"
+  billing_mode = "PAY_PER_REQUEST"
+
+  hash_key = "LockID"
 
   attribute {
     name = "LockID"
     type = "S"
+  }
+
+  tags = {
+    Name        = "terraform-lock"
+    Environment = "Dev"
   }
 }
