@@ -1,6 +1,6 @@
 terraform {
   backend "s3" {
-    bucket         = "rithish-s3" # change this
+    bucket         = "rithissh-s3"
     key            = "rithih/terraform.tfstate"
     region         = "ap-south-1"
     encrypt        = true
